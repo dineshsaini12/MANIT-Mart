@@ -1,0 +1,126 @@
+.topbar {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0 0 14px 14px;
+  border-top: 0;
+  padding: 0 17px;
+  position: relative;
+  z-index: 10;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--ink);
+  font:
+    800 20px Manrope,
+    sans-serif;
+  letter-spacing: -1.1px;
+}
+.brand-mark {
+  width: 31px;
+  height: 31px;
+  border-radius: 10px 10px 10px 4px;
+  background: #315c45;
+  color: #f4f3e8;
+  display: grid;
+  place-items: center;
+  font: 700 22px Georgia;
+  box-shadow: 0 4px 12px #315c4530;
+}
+.brand-light {
+  font-weight: 500;
+  color: #73786d;
+}
+.main-nav {
+  display: flex;
+  gap: 38px;
+  margin-left: 50px;
+  height: 100%;
+  align-items: center;
+}
+.main-nav a {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #83857e;
+  font-size: 13px;
+  position: relative;
+}
+.main-nav a.active {
+  color: var(--ink);
+  font-weight: 600;
+}
+.main-nav a.active:after {
+  content: "";
+  height: 2px;
+  background: #315c45;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  animation: bar-in 0.45s both;
+}
+.top-actions {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.saved-link {
+  border: 0;
+  background: none;
+  color: #52564e;
+  font-size: 12px;
+}
+.saved-link span {
+  background: #e9ebe4;
+  padding: 4px 7px;
+  border-radius: 50%;
+  font-size: 10px;
+}
+.sell-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  background: #315c45;
+  color: #fff;
+  border-radius: 6px;
+  padding: 11px 15px;
+  font-size: 12px;
+  font-weight: 600;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+.sell-button:hover,
+.hero-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px #315c4535;
+}
+.sell-button > span {
+  font-size: 16px;
+}
+.avatar,
+.seller-avatar {
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #e8c3a9;
+  color: #583e2d;
+  font-weight: 700;
+}
+.avatar {
+  width: 32px;
+  height: 32px;
+  font-size: 12px;
+}
+.footer-brand .brand-mark {
+  width: 24px;
+  height: 24px;
+  font-size: 16px;
+}

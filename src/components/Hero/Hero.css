@@ -1,0 +1,316 @@
+.hero {
+  height: 495px;
+  margin-top: 25px;
+  background: linear-gradient(115deg, #edf2eb 0%, #e6eee5 53%, #dfe9e0 100%);
+  border: 1px solid #fff;
+  border-radius: 15px;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 25px 65px #32452b12;
+  isolation: isolate;
+}
+.hero:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 79% 42%, #fff6 0, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.24;
+  background-image:
+    linear-gradient(#8b9c8b20 1px, transparent 1px),
+    linear-gradient(90deg, #8b9c8b20 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(90deg, transparent 30%, #000 100%);
+}
+.hero-copy {
+  padding: 67px 0 0 7.5%;
+  position: relative;
+  z-index: 2;
+  width: 56%;
+  animation: rise-in 0.75s 0.08s both;
+}
+.eyebrow {
+  font:
+    500 9px "DM Mono",
+    monospace;
+  letter-spacing: 1.5px;
+  color: #667461;
+}
+.pulse-dot {
+  width: 6px;
+  height: 6px;
+  background: #568365;
+  display: inline-block;
+  border-radius: 50%;
+  margin: 0 7px 1px 0;
+  box-shadow: 0 0 0 0 #56836575;
+  animation: pulse 2s infinite;
+}
+.hero h1 {
+  font:
+    600 clamp(43px, 5vw, 67px)/1.04 Manrope,
+    sans-serif;
+  letter-spacing: -3.3px;
+  margin: 21px 0 14px;
+  color: #252921;
+}
+.hero h1 span {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-style: italic;
+  color: #53745b;
+  letter-spacing: -2.8px;
+}
+.hero-copy > p {
+  color: #70746c;
+  font-size: 13px;
+  line-height: 1.8;
+  margin: 0 0 22px;
+}
+.hero-cta {
+  display: inline-flex;
+  gap: 26px;
+  align-items: center;
+  background: #315c45;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 13px 17px;
+  font-size: 11px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+.hero-cta span {
+  font-size: 15px;
+}
+.hero-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #777c72;
+  font-size: 9px;
+  margin-top: 33px;
+}
+.mini-avatars {
+  display: flex;
+  padding-left: 3px;
+}
+.mini-avatars i {
+  font-style: normal;
+  display: grid;
+  place-items: center;
+  width: 21px;
+  height: 21px;
+  margin-left: -4px;
+  border: 2px solid #e9eee7;
+  border-radius: 50%;
+  background: #e9c9b0;
+  color: #574433;
+  font-size: 7px;
+  font-weight: 700;
+}
+.mini-avatars i:nth-child(2) {
+  background: #bdd0b8;
+}
+.mini-avatars i:nth-child(3) {
+  background: #c6bfd7;
+}
+.hero-art {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 49%;
+  height: 100%;
+  overflow: hidden;
+}
+.art-sun {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  right: 18%;
+  top: 66px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #f6e8cc, #eddbb7);
+  box-shadow: inset 0 0 45px #fff8;
+  animation: breathe 7s ease-in-out infinite;
+}
+.art-orbit {
+  position: absolute;
+  border: 1px solid #9fb39f76;
+  border-radius: 50%;
+  transform: rotate(-27deg);
+}
+.art-student {
+  position: absolute;
+  bottom: -40px;
+  right: 25%;
+  height: 305px;
+  width: 180px;
+  animation: float 5s ease-in-out infinite;
+}
+.student-face {
+  position: absolute;
+  z-index: 3;
+  top: 38px;
+  left: 64px;
+  width: 69px;
+  height: 90px;
+  background: #bd805f;
+  border-radius: 44% 48% 45% 43%;
+  transform: rotate(8deg);
+}
+.student-hair {
+  position: absolute;
+  z-index: 4;
+  top: 26px;
+  left: 57px;
+  width: 83px;
+  height: 69px;
+  border-radius: 53% 52% 25% 43%;
+  background: #302d2a;
+  transform: rotate(5deg);
+}
+.student-body {
+  position: absolute;
+  top: 117px;
+  left: 26px;
+  width: 140px;
+  height: 220px;
+  border-radius: 57px 60px 0 0;
+  background: linear-gradient(145deg, #67866d, #4a6952);
+  transform: rotate(-4deg);
+}
+.student-arm {
+  position: absolute;
+  z-index: 5;
+  top: 131px;
+  left: 35px;
+  width: 40px;
+  height: 133px;
+  border-radius: 30px;
+  background: #bd805f;
+  transform: rotate(29deg);
+}
+.float-card {
+  position: absolute;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 12px;
+  background: #ffffffe0;
+  border: 1px solid #ffffff;
+  border-radius: 11px;
+  box-shadow: 0 12px 30px #34433421;
+  backdrop-filter: blur(12px);
+  animation: float 4s ease-in-out infinite;
+}
+.float-card span {
+  font-size: 24px;
+}
+.float-card small {
+  font:
+    500 7px "DM Mono",
+    monospace;
+  letter-spacing: 0.8px;
+  color: #6d796a;
+}
+.float-book {
+  top: 100px;
+  left: 6%;
+  transform: rotate(-7deg);
+}
+.float-headphones {
+  top: 220px;
+  right: 3%;
+  animation-delay: -1.6s;
+  transform: rotate(5deg);
+}
+.float-lamp {
+  bottom: 49px;
+  left: 14%;
+  animation-delay: -2.5s;
+  transform: rotate(4deg);
+}
+.tech-chip {
+  position: absolute;
+  z-index: 5;
+  border: 1px solid #ffffffc2;
+  background: #ffffff59;
+  border-radius: 20px;
+  padding: 7px 10px;
+  color: #648066;
+  font:
+    8px "DM Mono",
+    monospace;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(8px);
+}
+.art-caption {
+  position: absolute;
+  right: 31%;
+  bottom: 23px;
+  font:
+    italic 12px/1.5 Georgia,
+    serif;
+  color: #50644e;
+  transform: rotate(-5deg);
+}
+.art-caption span {
+  font-style: normal;
+  color: #a4724e;
+}
+.art-spark {
+  position: absolute;
+  color: #a5724c;
+  animation: spark 3.6s ease-in-out infinite;
+}
+.hero-stamp {
+  position: absolute;
+  right: 43%;
+  top: 27px;
+  z-index: 3;
+  width: 66px;
+  height: 66px;
+  background: #d2a86e;
+  color: #fffdf3;
+  transform: rotate(11deg);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font:
+    500 7px/1.45 "DM Mono",
+    monospace;
+  text-align: center;
+  letter-spacing: 0.7px;
+  box-shadow: 0 5px 14px #775e3e2e;
+  animation: slow-spin 22s linear infinite;
+}
+.hero-stamp b {
+  font-size: 13px;
+}
+.hero-index {
+  position: absolute;
+  bottom: 18px;
+  left: 26px;
+  color: #829180;
+  font:
+    8px "DM Mono",
+    monospace;
+  letter-spacing: 0.9px;
+}
+.hero-index i {
+  display: inline-block;
+  width: 31px;
+  height: 1px;
+  background: #9eac9d;
+  margin: 0 8px 3px;
+}

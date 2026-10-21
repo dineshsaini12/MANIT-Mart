@@ -1,0 +1,501 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #21251f;
+  background: #f7f8f4;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  --ink: #21251f;
+  --muted: #84877f;
+  --green: #315c45;
+  --line: #e6e9e2;
+  --glass: rgba(255, 255, 255, 0.58);
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 30px;
+}
+body {
+  margin: 0;
+  min-width: 360px;
+  background:
+    radial-gradient(ellipse at 12% 2%, #e8eee4 0, transparent 30%),
+    radial-gradient(ellipse at 93% 48%, #f1eee3 0, transparent 25%), #f7f8f4;
+}
+button,
+a,
+input {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+}
+.app-shell {
+  max-width: 1440px;
+  margin: auto;
+  padding: 0 6.1%;
+  overflow: hidden;
+}
+.glass-panel {
+  background: var(--glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid #ffffffb3;
+  box-shadow: 0 12px 36px #31452b0a;
+}
+.orbit-one {
+  width: 475px;
+  height: 270px;
+  right: -4%;
+  top: 110px;
+  animation: orbit 28s linear infinite;
+}
+.orbit-two {
+  width: 455px;
+  height: 215px;
+  right: 2%;
+  top: 145px;
+  animation: orbit 34s linear infinite reverse;
+}
+.chip-one {
+  top: 38px;
+  right: 13%;
+}
+.chip-two {
+  bottom: 32px;
+  right: 9%;
+}
+.chip-two b {
+  color: #315c45;
+  padding-left: 7px;
+}
+.spark-one {
+  right: 23%;
+  top: 50px;
+  font-size: 18px;
+}
+.spark-two {
+  right: 11%;
+  top: 183px;
+  font-size: 14px;
+  animation-delay: -1.2s;
+}
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes pulse {
+  70% {
+    box-shadow: 0 0 0 7px #56836500;
+  }
+  100% {
+    box-shadow: 0 0 0 0 #56836500;
+  }
+}
+@keyframes float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -9px;
+  }
+}
+@keyframes breathe {
+  0%,
+  100% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.04;
+  }
+}
+@keyframes orbit {
+  to {
+    rotate: 360deg;
+  }
+}
+@keyframes spark {
+  0%,
+  100% {
+    opacity: 0.5;
+    scale: 0.8;
+  }
+  50% {
+    opacity: 1;
+    scale: 1.2;
+  }
+}
+@keyframes slow-spin {
+  to {
+    rotate: 360deg;
+  }
+}
+@keyframes bar-in {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@media (max-width: 1000px) {
+  .app-shell {
+    padding: 0 4%;
+  }
+  .hero {
+    height: 455px;
+  }
+  .hero-copy {
+    padding-left: 5%;
+    width: 62%;
+  }
+  .hero h1 {
+    font-size: 55px;
+  }
+  .hero-art {
+    width: 47%;
+    opacity: 0.96;
+  }
+  .hero-stamp {
+    right: 39%;
+  }
+  .product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .steps-section {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .steps-intro br {
+    display: none;
+  }
+  .steps-intro h2 {
+    font-size: 32px;
+  }
+  .steps-orbit {
+    right: 9%;
+    top: 4px;
+  }
+  .step-card {
+    min-height: 155px;
+  }
+}
+@media (max-width: 650px) {
+  body {
+    min-width: 340px;
+  }
+  .app-shell {
+    padding: 0 15px;
+  }
+  .topbar {
+    height: 65px;
+    padding: 0 9px;
+    border-radius: 0 0 10px 10px;
+  }
+  .brand {
+    font-size: 17px;
+    gap: 7px;
+  }
+  .brand-mark {
+    width: 27px;
+    height: 27px;
+  }
+  .main-nav {
+    display: none;
+  }
+  .top-actions {
+    gap: 9px;
+  }
+  .saved-link {
+    font-size: 10px;
+  }
+  .sell-button {
+    padding: 9px 10px;
+    font-size: 10px;
+  }
+  .sell-button > span {
+    display: none;
+  }
+  .avatar {
+    width: 28px;
+    height: 28px;
+  }
+  .hero {
+    margin-top: 15px;
+    height: 540px;
+    align-items: flex-start;
+    border-radius: 12px;
+  }
+  .hero-copy {
+    padding: 34px 20px;
+    width: 100%;
+  }
+  .eyebrow {
+    font-size: 8px;
+  }
+  .hero h1 {
+    font-size: 44px;
+    letter-spacing: -2.7px;
+    margin-top: 17px;
+  }
+  .hero h1 span {
+    letter-spacing: -2px;
+  }
+  .hero-copy > p {
+    font-size: 11px;
+  }
+  .hero-note {
+    font-size: 8px;
+    margin-top: 18px;
+  }
+  .hero-art {
+    top: auto;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 230px;
+  }
+  .art-sun {
+    width: 178px;
+    height: 178px;
+    top: 16px;
+    right: 24%;
+  }
+  .art-student {
+    height: 210px;
+    width: 120px;
+    right: 27%;
+    bottom: -36px;
+    transform: scale(0.72);
+    transform-origin: bottom;
+  }
+  .orbit-one {
+    width: 330px;
+    height: 180px;
+    top: 22px;
+    right: -3%;
+  }
+  .orbit-two {
+    width: 320px;
+    height: 160px;
+    top: 37px;
+    right: 4%;
+  }
+  .float-card {
+    padding: 6px 8px;
+    gap: 5px;
+  }
+  .float-card span {
+    font-size: 18px;
+  }
+  .float-card small {
+    font-size: 6px;
+  }
+  .float-book {
+    top: 40px;
+    left: 3%;
+  }
+  .float-headphones {
+    top: 110px;
+    right: 2%;
+  }
+  .float-lamp {
+    bottom: 20px;
+    left: 5%;
+  }
+  .art-caption {
+    right: 8%;
+    bottom: 13px;
+    font-size: 9px;
+  }
+  .hero-stamp {
+    top: 290px;
+    right: 14%;
+    width: 53px;
+    height: 53px;
+    font-size: 6px;
+  }
+  .chip-one {
+    top: 8px;
+    right: 7%;
+    font-size: 6px;
+  }
+  .chip-two {
+    bottom: 7px;
+    right: 4%;
+    font-size: 6px;
+  }
+  .hero-index {
+    bottom: 9px;
+    left: 12px;
+    font-size: 6px;
+  }
+  .discover-section {
+    padding: 45px 0 33px;
+  }
+  .section-heading h2 {
+    font-size: 27px;
+  }
+  .section-heading h2 em {
+    font-size: 29px;
+  }
+  .listing-count {
+    gap: 6px;
+  }
+  .listing-count strong {
+    font-size: 23px;
+  }
+  .listing-count span {
+    font-size: 7px;
+  }
+  .toolbar {
+    margin: 19px 0 14px;
+    gap: 12px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .category-list {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 2px;
+  }
+  .category-chip {
+    white-space: nowrap;
+    padding: 8px 10px;
+    font-size: 9px;
+  }
+  .search-box {
+    width: 100%;
+  }
+  .search-box kbd {
+    display: none;
+  }
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .product-image {
+    height: 137px;
+  }
+  .item-emoji {
+    font-size: 48px;
+  }
+  .product-info {
+    padding: 10px 9px;
+  }
+  .product-title-row {
+    min-height: 42px;
+  }
+  .product-title-row h3 {
+    font-size: 10px;
+  }
+  .category-label {
+    display: none;
+  }
+  .price-row {
+    gap: 5px;
+    flex-wrap: wrap;
+  }
+  .price-row strong {
+    font-size: 14px;
+  }
+  .discount {
+    font-size: 7px;
+  }
+  .seller-row {
+    font-size: 7px;
+  }
+  .location {
+    font-size: 6px;
+  }
+  .bottom-note {
+    flex-wrap: wrap;
+    text-align: center;
+    line-height: 1.6;
+    font-size: 8px;
+    margin-top: 27px;
+  }
+  .steps-section {
+    padding: 39px 0 48px;
+    gap: 14px;
+  }
+  .steps-intro h2 {
+    font-size: 30px;
+    margin: 12px 0;
+  }
+  .steps-intro h2 em {
+    font-size: 32px;
+  }
+  .steps-intro p {
+    font-size: 10px;
+  }
+  .steps-orbit {
+    width: 65px;
+    height: 65px;
+    font-size: 20px;
+    right: 14px;
+    top: 9px;
+  }
+  .steps-list {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+  .step-card {
+    min-height: 0;
+    padding: 13px 14px;
+  }
+  .step-top {
+    float: right;
+    gap: 12px;
+  }
+  .step-card h3 {
+    margin: 2px 0 5px;
+    font-size: 13px;
+  }
+  .step-card p {
+    font-size: 9px;
+    max-width: 80%;
+  }
+  .step-icon {
+    width: 27px;
+    height: 27px;
+    font-size: 16px;
+  }
+  footer {
+    font-size: 7px;
+    gap: 10px;
+    line-height: 1.5;
+    flex-wrap: wrap;
+  }
+  footer span:nth-child(2) {
+    display: none;
+  }
+  footer span:last-child {
+    text-align: right;
+  }
+  .footer-brand {
+    font-size: 13px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
