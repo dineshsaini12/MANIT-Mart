@@ -5,7 +5,7 @@ MANIT Mart is a student resale marketplace for the MANIT community in Bhopal. Th
 ## 10-step build plan
 
 1. **React storefront foundation** — responsive marketplace layout, sample listings, search, category filters, and saved-item interaction. *(In progress: UI foundation implemented.)*
-2. **Express and Node API foundation** — create the server, health route, and development configuration.
+2. **Express and Node API foundation** — create the server, health route, and development configuration. *(Complete.)*
 3. **MongoDB connection and listing model** — persist listings and seed development data.
 4. **Connect storefront to listings API** — load marketplace items from MongoDB through Express.
 5. **Account registration and sign-in** — add student accounts and authentication.
@@ -17,7 +17,7 @@ MANIT Mart is a student resale marketplace for the MANIT community in Bhopal. Th
 
 ## Current implementation
 
-The current step is a React storefront foundation. Listing data is sample data held in the frontend; there is no backend, database, or account system yet. The interface includes responsive listing cards, search, category filters, and a saved-item count.
+The React storefront uses sample listing data held in the frontend. The Express API foundation is now in place with a health route; MongoDB persistence and account features are not connected yet. The interface includes responsive listing cards, search, category filters, and a saved-item count.
 
 ## Run the frontend
 
@@ -29,6 +29,8 @@ npm run dev
 ```
 
 Vite prints the local development URL in the terminal. Create a production bundle with `npm run build`.
+
+Run the API in a second terminal with `npm run dev:api`. Its health endpoint is available at `http://localhost:3001/api/health`; when using Vite, requests to `/api` are proxied to the API server.
 
 ## Project structure
 
