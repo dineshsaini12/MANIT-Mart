@@ -1,50 +1,50 @@
-# MANIT Mart
+﻿# MANIT Mart
 
-MANIT Mart is a student resale marketplace for the MANIT community in Bhopal. The app is being built in 10 incremental steps with the MERN stack (MongoDB, Express, React, and Node.js).
+MANIT Mart is a student resale marketplace for the MANIT community in Bhopal, built with React, Express, and MongoDB.
 
-## 10-step build plan
+## Build plan
 
-1. **React storefront foundation** — responsive marketplace layout, sample listings, search, category filters, and saved-item interaction. *(In progress: UI foundation implemented.)*
-2. **Express and Node API foundation** — create the server, health route, and development configuration. *(Complete.)*
-3. **MongoDB connection and listing model** — persist listings and seed development data.
+1. **React storefront foundation** — responsive marketplace layout, sample listings, search, category filters, and saved-item interaction. *(Implemented.)*
+2. **Express and Node API foundation** — API server and health route. *(Implemented.)*
+3. **MongoDB connection and listing model** — Mongoose model, optional API connection, and development data seeding. *(Implemented; configure MongoDB to use it.)*
 4. **Connect storefront to listings API** — load marketplace items from MongoDB through Express.
-5. **Account registration and sign-in** — add student accounts and authentication.
-6. **Create and manage listings** — let signed-in students publish, edit, and remove their items.
-7. **Listing details and buyer contact** — add item detail views and a first contact flow.
-8. **Offers and counteroffers** — support buyer-seller price negotiation.
-9. **Deal tracking and responsive polish** — manage deal states and refine accessibility and mobile behavior.
-10. **Production readiness** — environment configuration, validation, error handling, and deployment documentation.
+5. **Account registration and sign-in**
+6. **Create and manage listings**
+7. **Listing details and buyer contact**
+8. **Offers and counteroffers**
+9. **Deal tracking and responsive polish**
+10. **Production readiness**
 
-## Current implementation
+## Run locally
 
-The React storefront uses sample listing data held in the frontend. The Express API foundation is now in place with a health route; MongoDB persistence and account features are not connected yet. The interface includes responsive listing cards, search, category filters, and a saved-item count.
-
-## Run the frontend
-
-Prerequisites: Node.js and npm.
+Prerequisites: Node.js, npm, and MongoDB (local or Atlas).
 
 ```bash
 npm install
-npm run dev
+Copy-Item .env.example .env
 ```
 
-Vite prints the local development URL in the terminal. Create a production bundle with `npm run build`.
+Set `MONGODB_URI` in `.env` to your MongoDB connection string. Then start the frontend and API in separate terminals:
 
-Run the API in a second terminal with `npm run dev:api`. Its health endpoint is available at `http://localhost:3001/api/health`; when using Vite, requests to `/api` are proxied to the API server.
+```bash
+npm run dev
+npm run dev:api
+```
+
+Seed or refresh the sample listings with:
+
+```bash
+npm run seed
+```
+
+The API health endpoint is `http://localhost:3001/api/health`; it reports whether MongoDB is connected. Vite proxies `/api` requests to the API server. Create a production frontend bundle with `npm run build`.
 
 ## Project structure
 
 ```text
-src/
-  App.jsx       Marketplace interface and interactions
-  main.jsx      React entry point
-  styles.css    Responsive storefront styling
-index.html      Vite page entry
+src/                 React storefront and sample listing data
+server/db.js         MongoDB connection helpers
+server/index.js      Express API server and health route
+server/models/       Mongoose models
+server/seed.js       Development listing seeder
 ```
-
-## Stack
-
-- React for the frontend
-- Node.js and Express.js planned for the API
-- MongoDB planned for persistence
-- Vite for local React development and builds
